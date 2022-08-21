@@ -2,7 +2,7 @@
 #
 # 
 # MCU name
-MCU = atmega1281
+MCU = atmega128
 
 # Output format. (can be srec, ihex)
 FORMAT = ihex
@@ -14,7 +14,11 @@ TARGET = freecut
 FCLK = 16000000UL
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC = main.c usb.c lcd.c keypad.c timer.c stepper.c cli.c flash.c dial.c hpgl.c shvars.c scale.c
+#SRC = cli.c display.c display_oled.c g_code.c keybad_expression.c main.c serial.c spi.c timer.c \
+#    dial.c display_lcd.c flash.c hpgl.c keypad.c scale.c shvars.c stepper.c usb.c
+SRC = cli.c display.c display_oled.c g_code.c keybad_expression.c main.c serial.c spi.c \
+    dial.c display_lcd.c flash.c hpgl.c keypad.c scale.c shvars.c stepper.c usb.c
+
 
 # Assembler sources 
 ASRC = 
@@ -69,7 +73,7 @@ all: $(TARGET).elf $(TARGET).hex $(TARGET).lss tags
 
 #you may need to change this line to program your device
 prog: all 
-	avrdude -pm128 -cstk500v2 -b115200 -P/dev/ttyUSB0 -u -V -U flash:w:$(TARGET).hex:i 
+	avrdude -p m128 -c usbasp -u -U flash:w:$(TARGET).hex:i 
 
 # Create final output files (.hex) from ELF output file.
 %.hex: %.elf
