@@ -8,15 +8,13 @@ MCU = atmega128
 FORMAT = ihex
 
 # Target file name (without extension).
-TARGET = freecut
+TARGET = freeexpression
 
 # Speed
 FCLK = 16000000UL
 
 # List C source files here. (C dependencies are automatically generated.)
-#SRC = cli.c display.c display_oled.c g_code.c keybad_expression.c main.c serial.c spi.c timer.c \
-#    dial.c display_lcd.c flash.c hpgl.c keypad.c scale.c shvars.c stepper.c usb.c
-SRC = cli.c display.c display_oled.c g_code.c keybad_expression.c main.c serial.c spi.c \
+SRC = cli.c display.c display_oled.c g_code.c keybad_expression.c main.c serial.c spi.c timer.c\
     dial.c display_lcd.c flash.c hpgl.c keypad.c scale.c shvars.c stepper.c usb.c
 
 
@@ -24,7 +22,7 @@ SRC = cli.c display.c display_oled.c g_code.c keybad_expression.c main.c serial.
 ASRC = 
 
 # Optional compiler flags.
-CFLAGS  = -D$(MCU) $(TEST) $(CE) -Os -DFCLK=$(FCLK) -fpack-struct 
+CFLAGS  = -D$(MCU) $(TEST) $(CE) -Os -DFCLK=$(FCLK) -DMACHINE_EXPRESSION -fpack-struct 
 CFLAGS += -fshort-enums -Wall -Werror -Wstrict-prototypes 
 
 # Optional assembler flags.
