@@ -37,7 +37,7 @@
 #include "version.h"
 #include "dial.h"
 #include "hpgl.h"
-#include "display.h"
+#include "lcd.h"
 void setup(void);
 
 
@@ -46,7 +46,7 @@ void setup(void)
 	// Watchdogging disabled -- No use while debugging / testing 
 	//wdt_enable( WDTO_30MS );
 	keypad_init( );
-	display_init();
+	lcd_init();
 	usb_init();
 	timer_init( );
 	stepper_init( );
@@ -69,7 +69,6 @@ void setup(void)
 int main( void )
 {
 	setup();
-	display_update();
     while( 1 )
     {
         cli_poll( ); // polls ready bytes from USB  and processes them

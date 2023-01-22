@@ -212,7 +212,7 @@ int keypad_poll( void )
 	char string[40];
 	if(key>=0) {
 		sprintf(string,"%d",key);
-		display_puts(string);
+		// display_puts(string);
 	}
 	#endif
 	// the button leds are really strange
@@ -230,37 +230,37 @@ int keypad_poll( void )
 			break;
 		case KEYPAD_G:
 			Lang=G_CODE;
-			display_puts("G-CODE selected");
+			// display_puts("G-CODE selected");
 			break;
 			
 		case KEYPAD_H:
 			Lang=HPGL;
-			display_puts("HPGL selected");
+			// display_puts("HPGL selected");
 			break;
 			
 		case KEYPAD_P:
 			Lang=GPGL;
-			display_puts("GPGL selected");
+			// display_puts("GPGL selected");
 			break;	
 			
 		case KEYPAD_LOADMAT:
 		stepper_load_paper();
-		display_puts("Media loaded");
+		// display_puts("Media loaded");
 		break;
 
 		case KEYPAD_UNLOADMAT:
 		stepper_unload_paper();
-		display_puts("Media unloaded");
+		// display_puts("Media unloaded");
 		break;
 		
 		case KEYPAD_RESETALL:
-		display_puts("Homing carriage...");
+		// display_puts("Homing carriage...");
 		stepper_home();
 		break;
 		
 		case KEYPAD_BACKSPACE:
 		stepper_set_origin00();
-		display_puts("Location 0,0 set");
+		// display_puts("Location 0,0 set");
 		break;
 		
 		// this jogs X and Y freely -- use to load, unload or set position for  0,0 origin
@@ -287,12 +287,12 @@ int keypad_poll( void )
 		break;
 #endif
 		case KEYPAD_F5:
-		display_puts("Cutter down");
+		// display_puts("Cutter down");
 		pen_down();
 		break;
 		
 		case KEYPAD_F6:
-		display_puts("Cutter up");
+		// display_puts("Cutter up");
 		pen_up();
 		break;
 		

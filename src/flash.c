@@ -302,19 +302,21 @@ void flash_init( void )
 
 void flash_test(void)
 {
-	display_puts("Flash test");	
+
+	// display_puts("Flash test");	
 	flash_init();
 	flash_start_read(4);
-	char c[20];
 	
-	int i=0;
-	for(i=0;i<4;i++) c[0]=flash_read_next_byte();
-	for(i=0;i<20;i++) {
-		c[i]=0x00;	
-	}
-	for(i=0;i<10;i++) {
-		c[i]=flash_read_next_byte();
-	}
-	display_puts(c);
+	// char c[20];
+
+	// int i=0;
+	// for(i=0;i<4;i++) c[0]=flash_read_next_byte();
+	// for(i=0;i<20;i++) {
+	// 	 c[i]=0x00;	
+	// }
+	// for(i=0;i<10;i++) {
+	//	c[i]=flash_read_next_byte();
+	//}
+	// display_puts(c);
 	flash_init();
 }

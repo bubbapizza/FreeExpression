@@ -14,15 +14,15 @@ TARGET = freeexpression
 FCLK = 16000000UL
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC = cli.c display.c display_oled.c g_code.c keybad_expression.c main.c serial.c spi.c timer.c\
-    dial.c display_lcd.c flash.c hpgl.c keypad.c scale.c shvars.c stepper.c usb.c
+SRC = cli.c lcd.c g_code.c main.c serial.c spi.c timer.c\
+    dial.c flash.c hpgl.c keypad.c scale.c shvars.c stepper.c usb.c
 
 
 # Assembler sources 
 ASRC = 
 
 # Optional compiler flags.
-CFLAGS  = -D$(MCU) $(TEST) $(CE) -Os -DFCLK=$(FCLK) -DMACHINE_EXPRESSION -fpack-struct 
+CFLAGS  = -D$(MCU) $(TEST) $(CE) -Os -DFCLK=$(FCLK) -DMACHINE_CAKE -fpack-struct 
 CFLAGS += -fshort-enums -Wall -Werror -Wstrict-prototypes 
 
 # Optional assembler flags.
